@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - section5
 jobs:
   test:
     runs-on: ubuntu-latest
