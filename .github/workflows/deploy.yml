@@ -4,7 +4,16 @@ on:
     branches:
       - main
       - dev
+# Workflow level env variables
+env:
+  MONGODB_DB_NAME: gha-demo
 jobs:
+  # Job level env variables
+  env:
+    MONGODB_CLUSTER_ADDRESS:
+    MONGODB_USERNAME:
+    MONGODB_PASSWORD:
+    PORT: 8080
   test:
     environment: testing
     runs-on: ubuntu-latest
@@ -23,11 +32,12 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "..."
+        run: |
+          echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
-        run: |        
+        run: |
           echo "..."
