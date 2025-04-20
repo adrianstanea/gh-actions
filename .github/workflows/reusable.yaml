@@ -7,6 +7,10 @@ on:
         description: Name of the deployable artifact files
         required: false
         type: string
+    # secrets:
+    #   some-secret:
+    #     required: false
+    #     description: A secret required for deployment
 jobs:
   deploy:
     runs-on: ubuntu-latest
