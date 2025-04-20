@@ -70,7 +70,8 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/reusable.yaml
-    # runs-on: ubuntu-latest
+    with:
+      artifact-name: dist-files
   report:
     needs: [lint, deploy]
     if: ${{ failure() }}
