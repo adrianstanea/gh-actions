@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - section7
 jobs:
   lint:
     runs-on: ubuntu-latest
