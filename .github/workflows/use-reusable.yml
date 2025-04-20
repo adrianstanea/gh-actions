@@ -80,7 +80,7 @@ jobs:
     steps:
       - name: Output information
         run: |
-          echo 'Deploy result: ${{ needs.deploy.outputs }}'
+          echo 'Deploy result: ${{ toJson(needs.deploy.outputs) }}'
   report:
     needs: [lint, deploy]
     if: ${{ failure() }}
